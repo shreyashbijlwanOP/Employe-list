@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+    <title>Table</title>
+    <style>
+        .formDiv {
+            width: 400px;
+            margin: auto;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .edit-form {
+            width: 100%;
+            position: absolute;
+            height: 100vh;
+            top :  0;
+            background-color: rgba(0, 0, 0, 0.334); 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        main{
+            width: 700px;
+            height: 60vh;
+            background-color: white;
+
+        }
+
+
+        body {
+            position: relative;
+        }
+        .btn-close{
+            position: absolute;
+            top:10px;
+            right:30px;
+            zoom: 200%;
+        }
+        
+    </style>
+
+
+
+
+</head>
+
+<body>
+    <div class="edit-form d-none">
+        <div class="btn btn-close btn-dark btn-lg "></div>
+        <main class="d-flex justify-content-center align-items-center">
+                <form class="form w-50" onsubmit="event.preventDefault()">
+                    <input class="form-control mb-3"type="text" name="email" id="eName" placeholder="Employee name">
+                    <input class="form-control mb-3"type="email" name="email" id="email" placeholder="email">
+                    <input class="form-control mb-3"type="tel" name="mobile" id="mobile" placeholder="mobile">
+                    <select name="dept" id="dept" class="form-select mb-3" aria-placeholder="">
+            
+                    </select>
+            
+                    <button type="submit" class="btn btn-primary" onclick="onEdit()">Submit</button>
+                    
+                    <a href="./table.html" class="btn btn-warning"> Dispaly List </a>
+                </form>
+        </main>
+    </div>
+
+    
+    <div class="table-area">
+        <a href="./index.html" class="btn btn-primary btn-lg mb-4"> Back to Home page </a>
+
+        <!-- Search bar  -->
+       <div class="container">
+        <div class="input-group mb-3 w-25" >
+            <input type="text" class="form-control" id="search" oninput="search(event)" placeholder="search here " aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <span class="input-group-text" ><i class="fa-solid fa-magnifying-glass"></i></span>
+          </div>
+       </div>
+        <!-- Table for list -->
+
+        <table class="table" id=table>
+            <thead>
+                <th>S.no</th>
+                <th>Employee Name</th>
+                <th>Mobile number</th>
+                <th>Email </th>
+                <th>Department</th>
+                <th>actions</th>
+                </thhead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+    </div>
+    <script src="./table.js"></script>
+</body>
+
+</html>
